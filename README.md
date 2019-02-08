@@ -1,4 +1,4 @@
-Here one can find python scripts, used for sorting the world sample of Trichophyton mentagrophytes and T. interdigitale ITS region sequences. This work was supported by Russian Foundation for Basic Research [grant number 18-34-00153].
+Here one can find python scripts, used for sorting the world sample of Trichophyton mentagrophytes and T. interdigitale ITS region sequences.
 
 The script puttorights.py selects nucleotide sequences from infile.txt (Genbank format), containing exact matches with test element. The element should be modified directly in the code.
 
