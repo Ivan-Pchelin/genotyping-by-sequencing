@@ -4,4 +4,4 @@ The script puttorights.py selects nucleotide sequences from infile.txt (Genbank 
 
 The script compactor.py merges identical sequences into groups (genotypes). Its input is in FASTA format. The sequences in the input must be cropped.
 
-The script attributetogenotypes.py compares two fasta files: the dataset "sample.fasta" and file "referenceset.fasta" with reference sequences. The result is the file "attributed.txt", where the first column contains names from "sample.fasta" and the second -- a name from reference dataset, if found.
+The script attributetogenotypes.py compares two fasta files: the dataset "sequence.fasta" and file "referenceset.fasta" with reference sequences. The result is the file "attributed.txt", where the first column contains names from "sample.fasta" and the second -- a name from reference dataset, if found.
