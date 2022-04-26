@@ -74,7 +74,7 @@ for i in analyzednamesSET:
     qwerty.remove(i)
 if len(qwerty) > 0:
     qwerty = set(qwerty)
-    print('\n', 'Multiple entries of:')
+    print('\n', 'In the analyzed file, there are multiple entries of:')
     for i in qwerty:
         print('', i[1:])
     print ('\n', '------  Please fix it  ------')
