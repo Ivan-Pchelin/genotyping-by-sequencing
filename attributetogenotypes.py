@@ -12,7 +12,7 @@ with the files sequence.fasta and referenceset.fasta in the same folder,
 then type cmd in the address bar. In the black window appeared one
 should type "python attributetogenotypes.py", without the quotes.
 
-Version 2020-06-16 by Ivan Pchelin, arcella.oraia@gmail.com
+Version 2020-06-17 by Ivan Pchelin, arcella.oraia@gmail.com
 '''
 
 import re
@@ -51,8 +51,9 @@ irontonew('referenceset.fasta')
 irontonew('sequence.fasta')
 
 
-analyzednames = []
-analyzednamesSET = set()
+analyzednames = [] # a list with names from analyzed file to check whether for
+# all sequences types were available 
+analyzednamesSET = set() # used in the check for duplicated entries
 sequences = []
 with open ('neat_sequence.fasta') as inf:
     lines = inf.readlines()
@@ -66,14 +67,16 @@ with open ('neat_sequence.fasta') as inf:
         sequences.append(c)
         runner += 2
 
+nnames = len(analyzednamesSET)
 qwerty = list(analyzednames)
-# check for duplicated sequences
+# check for duplicated entries
 for i in analyzednamesSET:
     qwerty.remove(i)
 if len(qwerty) > 0:
+    qwerty = set(qwerty)
     print('\n', 'Multiple entries of:')
     for i in qwerty:
-        print(i)
+        print('', i[1:])
     print ('\n', '------  Please fix it  ------')
     for i in temporaryfiles:
         os.remove(i)
@@ -121,7 +124,9 @@ if listwithvariants != []:
             ouf.write(i)
             ouf.write('\n')
 
-print('\n', generalcount, 'sequences analyzed')
+print('\n', nnames, 'sequences analyzed')
+print('', generalcount, 'sequences with assigned genotypes')
+
 if len(analyzednames) > 0:
     print('\n', 'No matches for:')
     for i in analyzednames:
