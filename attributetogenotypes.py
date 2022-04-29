@@ -5,13 +5,11 @@ The result is the file "attributed.txt", where the names from "sequence.fasta"
 are supplemented with relevant accessions from "referenceset.fasta".
 If there is no perfect match between analyzed sequence and one
 of the reference sequences, no result is indicated.
-
 To launch the script, one should have installed Python interpreter
 from www.python.org/downloads/. Windows users can place the script
 with the files sequence.fasta and referenceset.fasta in the same folder,
 then type cmd in the address bar. In the black window appeared one
 should type "python attributetogenotypes.py", without the quotes.
-
 Version 2020-06-17 by Ivan Pchelin, arcella.oraia@gmail.com
 '''
 
@@ -89,10 +87,14 @@ with open ('neat_referenceset.fasta') as inf:
     runner = 0
     while runner < len(lines):
         c = []
-        c.append([re.findall(r'\S+', lines[runner])[0]])
-        c.append([re.findall(r'\S+', lines[runner+1])[0]])
-        references.append(c)
-        runner += 2
+        try:
+            c.append([re.findall(r'\S+', lines[runner])[0]])
+            c.append([re.findall(r'\S+', lines[runner+1])[0]])
+            references.append(c)
+            runner += 2
+        except:
+            pass
+            runner += 1
 
 listwithvariants = []
 generalcount = 0
