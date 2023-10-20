@@ -10,7 +10,8 @@ from www.python.org/downloads/. Windows users can place the script
 with the files sequence.fasta and referenceset.fasta in the same folder,
 then type cmd in the address bar. In the black window appeared one
 should type "python attributetogenotypes.py", without the quotes.
-Version 2020-06-17 by Ivan Pchelin, arcella.oraia@gmail.com
+Version 2023-10-20 by Ivan Pchelin, arcella.oraia@gmail.com.
+If I can be of assistance, please do not hesitate to contact me.
 '''
 
 import re
@@ -48,7 +49,6 @@ def irontonew (file):
 irontonew('referenceset.fasta')
 irontonew('sequence.fasta')
 
-
 analyzednames = [] # a list with names from analyzed file to check whether for
 # all sequences types were available 
 analyzednamesSET = set() # used in the check for duplicated entries
@@ -67,6 +67,7 @@ with open ('neat_sequence.fasta') as inf:
 
 nnames = len(analyzednamesSET)
 qwerty = list(analyzednames)
+
 # check for duplicated entries
 for i in analyzednamesSET:
     qwerty.remove(i)
@@ -79,6 +80,7 @@ if len(qwerty) > 0:
     for i in temporaryfiles:
         os.remove(i)
     sys.exit()
+
 
 # create dictionaries with reference and analyzed sequences
 references = []
@@ -106,7 +108,6 @@ with open ('attributed.txt', 'w') as ouf:
         for j in sequences:
             if i[1][0] in j[1][0]:
                 generalcount += 1
-                analyzednames.remove(j[0][0])
                 variantsofcurrentgenotype.add(j[1][0])
                 ouf.write (j[0][0][1:])
                 ouf.write ('\t')
@@ -128,11 +129,6 @@ if listwithvariants != []:
 
 print('\n', nnames, 'sequences analyzed')
 print('', generalcount, 'sequences with assigned genotypes')
-
-if len(analyzednames) > 0:
-    print('\n', 'No matches for:')
-    for i in analyzednames:
-        print ('', i[1:])
 
 # delete temporary files
 for i in temporaryfiles:
