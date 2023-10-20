@@ -1,6 +1,6 @@
 Here one can find python scripts, used for sorting the world sample of *Trichophyton mentagrophytes* and *T. interdigitale* ITS region sequences.
 
-The script **puttorights.py** selects nucleotide sequences from infile.txt (Genbank format), containing exact matches with test element. The element should be modified directly in the code.
+The script **puttorights.py** selects nucleotide sequences from infile.txt (GenBank format), containing exact matches with test element. The element should be modified directly in the code.
 
 The script **compactor.py** merges identical sequences into groups (genotypes). Its input is in FASTA format. The sequences in the input must be cropped.
 
