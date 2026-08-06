@@ -3,7 +3,7 @@ Thank you for visiting this page. Here one can find python scripts, used for sor
 The single most important file here may be **referenceset.fasta** with a collection of published genotypes. If you found even another brand new *Trichophyton* ITS region sequence and have an intent to publish it with a fancy Latin number, **please do** accomplish the following:
 (1) Ensure that the differentiating nucleotide substitution(s) are within the boundaries of ITS region. See for example [Nikkholgh et al. 2023](https://pubmed.ncbi.nlm.nih.gov/37429606/) or another typing paper.
 (2) Manually check the substitution(s) on both forward and reverse electrophoregrams.
-(3) Perform a literature search to see if someone already reserved that Latin number for another sequence.
+(3) Perform a literature search to see if someone have already reserved that Latin number for another sequence.
 
 The script **puttorights.py** selects nucleotide sequences from infile.txt (GenBank format), containing exact matches with test element. The element should be modified directly in the code.
 
