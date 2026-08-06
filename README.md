@@ -6,3 +6,9 @@ The script **compactor.py** merges identical sequences into groups (genotypes). 
 
 The script **attributetogenotypes.py** compares two fasta files: the dataset "sequence.fasta" and the file "referenceset.fasta" with reference sequences. The result will appear in the file "attributed.txt", where the first column contains names from "sample.fasta" and the second one contains a name from the reference dataset, if found. 
 The code and the *T. mentagrophytes / T. interdigitale* reference dataset of ribosomal ITS region sequences were described by [Taghipour et al. 2019](https://pubmed.ncbi.nlm.nih.gov/31444823/), the corrected genotyping approach and the updated dataset were published by [Nikkholgh et al. 2023](https://pubmed.ncbi.nlm.nih.gov/37429606/).
+
+Thank you for visiting this page. If you found even another brand new *Trichophyton* ITS region sequence and have an intent to publish it with a fancy Latin number, **please do** accomplish the following:
+(1) Ensure that the differentiating nucleotide substitution(s) are within the boundaries of ITS region. See for example Nikkholgh et al. 2023 or another typing paper.
+(2) Manually check the substitution(s) on both forward and reverse electrophoregrams.
+(3) Perform a literature search to see if someone already reserved that Latin number for another sequence.
+Good luck in research!
